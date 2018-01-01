@@ -1,68 +1,22 @@
-// const path = require('path');
-const webpack = require('webpack');
-// const ExtractTextPlugin = require('extract-text-webpack-plugin');
+var webpack = require('webpack');
+var path = require('path');
 
-// const GLOBALS = {
-//     'process.env.NODE_ENV': JSON.stringify('production')
-// };
-// const PROD = process.env.NODE_ENV === 'production';
+var BUILD_DIR = path.resolve(__dirname, 'src/client/public');
+var APP_DIR = path.resolve(__dirname, 'src/client/app');
 
-module.exports = {
-    debug: true,
-    // devtool: PROD ? 'source-map' : 'eval-source-map',
-    noInfo: false,
-    entry: './app/index',
-    // entry: PROD ?
-    //     './app/index' : [
-    //         'webpack-hot-middleware/client?reload=true', // reloads the page if hot module reloading fails.
-    //         './app/index'
-    //     ],
-    target: 'web',
-    // output: {
-    //     path: PROD ? __dirname + '/build' : __dirname + '/dist',
-    //     publicPath: '/',
-    //     filename: 'bundle.js'
-    // },
-    devServer: {
-        contentBase: './app'
-            // contentBase: PROD ? './build' : './app'
+var config = {
+    entry: APP_DIR + '/index.jsx',
+    output: {
+        path: BUILD_DIR,
+        filename: 'bundle.js'
     },
-    plugins: [
-        new webpack.HotModuleReplacementPlugin(),
-        new webpack.NoErrorsPlugin()
-    ],
-    // plugins: PROD ? [
-    //     new webpack.optimize.OccurenceOrderPlugin(),
-    //     new webpack.DefinePlugin(GLOBALS),
-    //     new ExtractTextPlugin('bundle.css'),
-    //     new webpack.optimize.DedupePlugin(),
-    //     new webpack.optimize.UglifyJsPlugin({ compress: { warnings: false } })
-    // ] : [
-    //     new webpack.HotModuleReplacementPlugin(),
-    //     new webpack.NoErrorsPlugin()
-    // ],
     module: {
-        loaders: [
-            { test: /\.js$/, include: path.join(__dirname, 'app'), loaders: ['babel'] },
-            // { test: /\.js$/, include: path.join(__dirname, 'app'), loaders: ['babel'] },
-            // {
-            //     test: /\.css$/,
-            //     loader: PROD ?
-            //         ExtractTextPlugin.extract('style', 'css?sourceMap') : 'style!css?sourceMap'
-            // },
-            // {
-            //     test: /\.scss$/,
-            //     loader: PROD ?
-            //         ExtractTextPlugin.extract('style', 'css?sourceMap!resolve-url!sass?sourceMap') : 'style!css?sourceMap!resolve-url!sass?sourceMap'
-            // },
-            // { test: /\.(svg|png|jpe?g|gif)(\?\S*)?$/, loader: 'url?limit=100000&name=img/[name].[ext]' },
-            // { test: /\.(eot|woff|woff2|ttf)(\?\S*)?$/, loader: 'url?limit=100000&name=fonts/[name].[ext]' }
-        ]
-    },
-    // sassLoader: {
-    //     includePaths: [path.resolve('./app')]
-    // },
-    resolve: {
-        root: [path.resolve('./app')]
+        loaders: [{
+            test: /\.jsx?/,
+            include: APP_DIR,
+            loader: 'babel-loader'
+        }]
     }
 };
+
+module.exports = config;
