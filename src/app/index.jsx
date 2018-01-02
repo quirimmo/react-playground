@@ -1,6 +1,7 @@
 import React from 'react';
 import { render } from 'react-dom';
 import AwesomeComponent from './AwesomeComponent.jsx';
+import css from './../../assets/styles/main.css';
 
 class App extends React.Component {
 	  
