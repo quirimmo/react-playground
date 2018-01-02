@@ -5,6 +5,7 @@ const CleanWebpackPlugin = require('clean-webpack-plugin');
 
 const BUILD_DIR = path.resolve(__dirname, 'dist');
 const APP_DIR = path.resolve(__dirname, 'src/app');
+const SRC_DIR = path.resolve(__dirname, 'src');
 
 const config = {
 	entry: APP_DIR + '/index.jsx',
@@ -12,7 +13,7 @@ const config = {
 	plugins: [
 		new CleanWebpackPlugin([BUILD_DIR]),
 		new HtmlWebpackPlugin({
-			title: 'Development'
+			template: SRC_DIR + '/index.html'
 		})
 	],
 	output: {
@@ -24,6 +25,9 @@ const config = {
 			test: /\.jsx$/,
 			use: 'babel-loader'
 		}]
+	},
+	devServer: {
+		contentBase: path.join(__dirname, "dist")
 	}
 };
 
