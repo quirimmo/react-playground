@@ -14,7 +14,7 @@
 	"homepage": "https://github.com/quirimmo/react-playground#readme",
 	"scripts": {
 		"test": "mocha --opts ./mocha.opts",
-		"tdd": "npm test -- --watch",
+		"test-watch": "npm test -- --watch",
 		"webpack": "webpack -d --watch",
 		"start": "webpack-dev-server --open"
 	},
