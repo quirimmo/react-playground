@@ -1,2 +1,3 @@
-var context = require.context('./src/app', true, /\.spec\.jsx$/); //make sure you have your directory and regex test set correctly!
+var context = require.context('./src/app', true, /\.spec\.jsx$/);
 context.keys().forEach(context);
+module.exports = context;
