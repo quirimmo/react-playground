@@ -1,4 +1,0 @@
---compilers js:babel-register 
---require ./test/unit/helpers.spec.jsx 
---require ./test/unit/dom.spec.jsx 
-./src/**/*.spec.jsx
