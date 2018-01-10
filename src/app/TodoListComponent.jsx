@@ -14,16 +14,16 @@ class TodoListComponent extends React.Component {
     }
 
     render() {
-        return ( 
+        return (
             <div>
-                <h3>TODO</h3> 
-                <TodoListItemComponent items = {this.state.items}/> 
+                <h3>TODO</h3>
+                <TodoListItemComponent items = {this.state.items}/>
                 <form onSubmit = {this.handleSubmit} >
-                    <input onChange = {this.handleChange} value = {this.state.text}/> 
+                    <input onChange = {this.handleChange} value = {this.state.text}/>
                     <button>
-                        Add Todo Item {this.state.items.length + 1} 
-                    </button> 
-                </form> 
+                        Add Todo Item {this.state.items.length + 1}
+                    </button>
+                </form>
             </div>
         );
     }
