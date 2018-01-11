@@ -11,6 +11,20 @@ import TodoListComponent from './TodoListComponent.jsx';
 import css from './../../assets/styles/main.scss';
 
 class App extends Component {
+
+	constructor(props) {
+		super(props);
+		this.menuItems = [{
+			id: 1,
+			label: 'Test 1',
+			path: '/my-path'
+		}, {
+			id: 2,
+			label: 'Test 2',
+			path: '/my-path-2'
+		}];
+	}
+
 	render () {
 		return (
 			<MuiThemeProvider>
@@ -22,6 +36,7 @@ class App extends Component {
 					<br/>
 					<TodoListComponent />
 					<br/>
+					<div>{this.createMenuItems()}</div>
 					<BrowserRouter>
 						<div>
 							<Link to='/awesome-component'>Awesome Component</Link>
@@ -35,7 +50,16 @@ class App extends Component {
 				</div>
 			</MuiThemeProvider>
     	)
-  	}
+	}
+
+	createMenuItems() {
+		return this.menuItems.map(itemsMapper);
+
+		function itemsMapper(item) {
+			return (<div key={item.id}>AAAA</div>);
+		}
+    }
+
 }
 
 export default App;
