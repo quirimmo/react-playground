@@ -8,7 +8,7 @@ import RaisedButton from 'material-ui/RaisedButton';
 import AwesomeComponent from './AwesomeComponent.jsx';
 import TodoListComponent from './TodoListComponent.jsx';
 
-import css from './../../assets/styles/main.css';
+import css from './../../assets/styles/main.scss';
 
 class App extends Component {
 	render () {
