@@ -34,6 +34,16 @@ const config = {
 					use: 'css-loader',
 					fallback: 'style-loader'
 				})
+			},
+			{
+				test: /\.scss$/,
+				use: [{
+					loader: 'style-loader'
+				}, {
+					loader: 'css-loader'
+				}, {
+					loader: 'sass-loader'
+				}]
 			}
 		]
 	},
