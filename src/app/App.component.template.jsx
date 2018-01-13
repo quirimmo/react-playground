@@ -18,16 +18,16 @@ import { BarChart } from 'react-d3-components';
 function getTemplate() {
 
     var tooltip = function(x, y0, y, total) {
-            return y.toString();
+		return y.toString();
     };
 
 	var data = [{
 		label: 'somethingA',
 		values: [
-			{ x: 'SomethingA', y: 10 },
-			{ x: 'SomethingB', y: 4 },
-			{ x: 'SomethingC', y: 3 },
-			{ x: 'SomethingD', y: -3 }
+			{ x: 'A', y: 10 },
+			{ x: 'B', y: 4 },
+			{ x: 'C', y: 3 },
+			{ x: 'D', y: -3 }
 		]
 	}];
 
@@ -38,10 +38,13 @@ function getTemplate() {
                 <BarChart
                     data={data}
                     width={800}
-                    height={400}
+					height={400}
+					barPadding={0.8}
                     margin={{top: 10, bottom: 50, left: 50, right: 10}}
                     tooltipHtml={tooltip}
-                    colorByLabel={false}
+					colorByLabel={false}
+					xAxis={{innerTickSize: 5, label: "x-label"}}
+                    yAxis={{label: "y-label"}}
                 />,
                 <br/>
                 <RaisedButton label="Default" />
