@@ -1,12 +1,10 @@
 import React from 'react';
+import getTemlpate from './TodoListItem.component.template.jsx';
+
 
 class TodoListItemComponent extends React.Component {
     render() {
-        return (
-            <ul>
-                {this.createItems()}
-            </ul>
-        );
+        return getTemlpate.call(this);
     }
 
     createItems() {
