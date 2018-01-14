@@ -55,7 +55,7 @@ function getTemplate() {
 					colorByLabel={false}
 					xAxis={{innerTickSize: 5, label: "x-label"}}
                     yAxis={{label: "y-label"}}
-                />,
+                />
                 <br/>
                 <RaisedButton label="Default" />
                 <p>Hello React Project</p>
@@ -69,9 +69,11 @@ function getTemplate() {
                     <div>
                         <Link to='/awesome-component'>Awesome Component</Link>
                         <Link to='/todo'>Todo List</Link>
+                        <Link to='/new-todo'>New Todo List</Link>
                         <Switch>
                             <Route path='/awesome-component' component={AwesomeComponent} />
                             <Route path='/todo' component={TodoListComponent} />
+                            <Route path='/new-todo' component={AddTodo} />
                         </Switch>
                     </div>
                 </HashRouter>
