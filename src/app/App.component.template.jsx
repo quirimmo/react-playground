@@ -14,6 +14,10 @@ import css from './../../assets/styles/main.scss';
 
 import { BarChart } from 'react-d3-components';
 
+import Footer from './components/Footer.jsx';
+import AddTodo from './containers/AddTodo.jsx';
+import VisibleTodoList from './containers/VisibleTodoList.jsx';
+
 
 function getTemplate() {
 
@@ -35,6 +39,12 @@ function getTemplate() {
     return (
         <MuiThemeProvider>
             <div>
+                <div>
+                    <AddTodo />
+                    <VisibleTodoList />
+                    <Footer />
+                </div>
+                <br/>
                 <BarChart
                     data={data}
                     width={800}
