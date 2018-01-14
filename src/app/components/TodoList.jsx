@@ -7,6 +7,6 @@ const NewTodoList = ({ todos, onTodoClick }) => (
             <Todo key={index} {...todo} onClick={() => onTodoClick(index)} />
         ))}
     </ul>
-)
+);
 
 export default NewTodoList;

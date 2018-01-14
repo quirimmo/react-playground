@@ -7,6 +7,6 @@ const NewTodo = ({ onClick, completed, text }) => (
     >
         {text}
     </li>
-)
+);
 
 export default NewTodo;

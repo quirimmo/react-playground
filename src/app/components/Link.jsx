@@ -2,7 +2,7 @@ import React from 'react';
 
 const NewLink = ({ active, children, onClick }) => {
     if (active) {
-        return <span>{children}</span>
+        return <span>{children}</span>;
     }
 
     return (
@@ -15,7 +15,7 @@ const NewLink = ({ active, children, onClick }) => {
         >
             {children}
         </a>
-    )
-}
+    );
+};
 
 export default NewLink;
