@@ -1,6 +1,6 @@
 import React from 'react';
 
-const NewTodo = ({ onClick, completed, text }) => (
+const TodoItem = ({ onClick, completed, text }) => (
     <li
         onClick={onClick}
         style={ {textDecoration: completed ? 'line-through' : 'none'} }
@@ -9,4 +9,4 @@ const NewTodo = ({ onClick, completed, text }) => (
     </li>
 );
 
-export default NewTodo;
+export default TodoItem;

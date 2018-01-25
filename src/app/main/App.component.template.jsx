@@ -11,10 +11,10 @@ import { BarChart } from 'react-d3-components';
 import css from './../../../../assets/styles/main.scss';
 
 import AwesomeComponent from './../awesome/Awesome.component.jsx';
-import TodoListComponent from './../todo-list/TodoList.component.jsx';
-import Footer from './../../components/Footer.jsx';
-import AddTodo from './../../containers/AddTodo.jsx';
-import VisibleTodoList from './../../containers/VisibleTodoList.jsx';
+// import NewTodoList from './../TodoList.jsx';
+// import TodoListComponent from './../todo-list/TodoList.component.jsx';
+
+import Todo from './../../components/todo/Todo.component.jsx';
 
 
 function getTemplate() {
@@ -37,11 +37,7 @@ function getTemplate() {
     return (
         <MuiThemeProvider>
             <div>
-                <div>
-                    <AddTodo />
-                    <VisibleTodoList />
-                    <Footer />
-                </div>
+                <TodoListWrapper />
                 <br/>
                 <BarChart
                     data={data}
@@ -66,10 +62,10 @@ function getTemplate() {
                 <HashRouter>
                     <div>
                         <Link to='/awesome-component'>Awesome Component</Link>
-                        <Link to='/todo'>Todo List</Link>
+                        <Link to='/todo-list-ultimate'>Todo List Ultimate</Link>
                         <Switch>
                             <Route path='/awesome-component' component={AwesomeComponent} />
-                            <Route path='/todo' component={TodoListComponent} />
+                            <Route path='/todo-list-ultimate' component={TodoListWrapper} />
                         </Switch>
                     </div>
                 </HashRouter>
