@@ -13,6 +13,7 @@ import css from './../../assets/styles/main.scss';
 import AwesomeComponent from './AwesomeComponent.jsx';
 import Todo from './todo/components/Todo.component.jsx'
 
+
 function getTemplate() {
 
     var tooltip = function(x, y0, y, total) {
