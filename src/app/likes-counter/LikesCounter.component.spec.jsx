@@ -1,8 +1,8 @@
 import React from 'react';
-import AwesomeComponent from './AwesomeComponent.jsx';
+import LikesCounter from './LikesCounter.jsx';
 
 describe('Comment item', () => {
-    const wrapper = shallow(<AwesomeComponent/>);
+    const wrapper = shallow(<LikesCounter/>);
 
     it('should be a list item', () => {
         expect(wrapper.type()).to.eql('div');

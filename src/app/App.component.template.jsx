@@ -10,7 +10,7 @@ import { BarChart } from 'react-d3-components';
 
 import css from './../../assets/styles/main.scss';
 
-import AwesomeComponent from './AwesomeComponent.jsx';
+import LikesCounter from './likes-counter/LikesCounter.component.jsx';
 import Todo from './todo/components/Todo.component.jsx'
 
 
@@ -53,14 +53,14 @@ function getTemplate() {
                 <RaisedButton label="Default" />
                 <p>Hello React Project</p>
                 <br/>
-                <AwesomeComponent />
+                <LikesCounter />
                 <br/>
                 <div>{this.createMenuItems()}</div>
                 <HashRouter>
                     <div>
-                        <Link to='/awesome-component'>Awesome Component</Link>
+                        <Link to='/likes-counter'>Likes Counter</Link>
                         <Switch>
-                            <Route path='/awesome-component' component={AwesomeComponent} />
+                            <Route path='/likes-counter' component={LikesCounter} />
                         </Switch>
                     </div>
                 </HashRouter>
