@@ -1,6 +1,7 @@
 import React from 'react';
 import { connect } from 'react-redux';
-import { addTodo } from '../actions/index.jsx';
+
+import { addTodo } from './../actions/index.jsx';
 
 let AddTodo = ({ dispatch }) => {
 	let input;
@@ -8,15 +9,15 @@ let AddTodo = ({ dispatch }) => {
   	return (
     	<div>
       		<form
-        		onSubmit={e => {
-          			e.preventDefault();
-          			if (!input.value.trim()) {
-            			return;
-          			}
-          			dispatch(addTodo(input.value));
-          			input.value = '';
-					}}
-				>
+			  	onSubmit={e => {
+					e.preventDefault();
+					if (!input.value.trim()) {
+						return;
+					}
+					dispatch(addTodo(input.value));
+					input.value = '';
+				}}
+			>
 				<input
 					ref={node => { input = node}}
 				/>
@@ -31,3 +32,12 @@ let AddTodo = ({ dispatch }) => {
 AddTodo = connect()(AddTodo);
 
 export default AddTodo;
+
+// onSubmit={e => {
+// 	e.preventDefault();
+// 	if (!input.value.trim()) {
+// 	  return;
+// 	}
+// 	dispatch(addTodo(input.value));
+// 	input.value = '';
+// }}

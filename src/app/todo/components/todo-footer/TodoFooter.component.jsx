@@ -1,5 +1,6 @@
 import React from 'react';
-import FilterLink from '../containers/FilterLink.jsx';
+
+import FilterLink from './../../containers/FilterLink.jsx';
 
 const TodoFooter = () => (
     <p>
@@ -14,7 +15,7 @@ const TodoFooter = () => (
         </FilterLink>
         {', '}
         <FilterLink filter="SHOW_COMPLETED">
-        Completed
+            Completed
         </FilterLink>
     </p>
 );

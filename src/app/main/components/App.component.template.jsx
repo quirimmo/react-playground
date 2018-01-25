@@ -6,15 +6,13 @@ import { HashRouter , BrowserRouter, Route, Link, Switch } from 'react-router-do
 
 import MuiThemeProvider from 'material-ui/styles/MuiThemeProvider';
 import RaisedButton from 'material-ui/RaisedButton';
+
 import { BarChart } from 'react-d3-components';
 
 import css from './../../../../assets/styles/main.scss';
 
-import AwesomeComponent from './../awesome/Awesome.component.jsx';
-// import NewTodoList from './../TodoList.jsx';
-// import TodoListComponent from './../todo-list/TodoList.component.jsx';
-
-import Todo from './../../components/todo/Todo.component.jsx';
+import LikesCounter from './../../likes-counter/components/LikesCounter.component.jsx';
+import Todo from './../../todo/components/Todo.component.jsx';
 
 
 function getTemplate() {
@@ -37,8 +35,6 @@ function getTemplate() {
     return (
         <MuiThemeProvider>
             <div>
-                <TodoListWrapper />
-                <br/>
                 <BarChart
                     data={data}
                     width={800}
@@ -54,18 +50,18 @@ function getTemplate() {
                 <RaisedButton label="Default" />
                 <p>Hello React Project</p>
                 <br/>
-                <AwesomeComponent />
+                <LikesCounter />
                 <br/>
-                <TodoListComponent />
+                <Todo />
                 <br/>
                 <div>{this.createMenuItems()}</div>
                 <HashRouter>
                     <div>
-                        <Link to='/awesome-component'>Awesome Component</Link>
-                        <Link to='/todo-list-ultimate'>Todo List Ultimate</Link>
+                        {/* <Link to='/awesome-component'>Awesome Component</Link> */}
+                        {/* <Link to='/todo-list-ultimate'>Todo List Ultimate</Link> */}
                         <Switch>
-                            <Route path='/awesome-component' component={AwesomeComponent} />
-                            <Route path='/todo-list-ultimate' component={TodoListWrapper} />
+                            {/* <Route path='/awesome-component' component={AwesomeComponent} />
+                            <Route path='/todo-list-ultimate' component={TodoListWrapper} /> */}
                         </Switch>
                     </div>
                 </HashRouter>

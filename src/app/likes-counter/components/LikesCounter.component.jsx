@@ -1,5 +1,5 @@
 import React from 'react';
-import getTemplate from './Awesome.component.template.jsx';
+import getTemplate from './LikesCounter.component.template.jsx';
 
 class AwesomeComponent extends React.Component {
 
