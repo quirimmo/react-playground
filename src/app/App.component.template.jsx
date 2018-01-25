@@ -6,18 +6,12 @@ import { HashRouter , BrowserRouter, Route, Link, Switch } from 'react-router-do
 
 import MuiThemeProvider from 'material-ui/styles/MuiThemeProvider';
 import RaisedButton from 'material-ui/RaisedButton';
-
-import AwesomeComponent from './AwesomeComponent.jsx';
-import TodoListComponent from './TodoListComponent.jsx';
+import { BarChart } from 'react-d3-components';
 
 import css from './../../assets/styles/main.scss';
 
-import { BarChart } from 'react-d3-components';
-
-import Footer from './components/Footer.jsx';
-import AddTodo from './containers/AddTodo.jsx';
-import VisibleTodoList from './containers/VisibleTodoList.jsx';
-
+import AwesomeComponent from './AwesomeComponent.jsx';
+import Todo from './todo/components/Todo.component.jsx'
 
 function getTemplate() {
 
@@ -40,9 +34,7 @@ function getTemplate() {
         <MuiThemeProvider>
             <div>
                 <div>
-                    <AddTodo />
-                    <VisibleTodoList />
-                    <Footer />
+                    <Todo />
                 </div>
                 <br/>
                 <BarChart
@@ -62,16 +54,12 @@ function getTemplate() {
                 <br/>
                 <AwesomeComponent />
                 <br/>
-                <TodoListComponent />
-                <br/>
                 <div>{this.createMenuItems()}</div>
                 <HashRouter>
                     <div>
                         <Link to='/awesome-component'>Awesome Component</Link>
-                        <Link to='/todo'>Todo List</Link>
                         <Switch>
                             <Route path='/awesome-component' component={AwesomeComponent} />
-                            <Route path='/todo' component={TodoListComponent} />
                         </Switch>
                     </div>
                 </HashRouter>
