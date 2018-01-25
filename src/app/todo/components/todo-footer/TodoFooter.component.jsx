@@ -1,7 +1,7 @@
 import React from 'react';
-import FilterLink from '../containers/FilterLink.jsx';
+import FilterLink from './../../containers/FilterLink.jsx';
 
-const NewFooter = () => (
+const TodoFooter = () => (
     <p>
         Show:
         {' '}
@@ -19,4 +19,4 @@ const NewFooter = () => (
     </p>
 );
 
-export default NewFooter;
+export default TodoFooter;
