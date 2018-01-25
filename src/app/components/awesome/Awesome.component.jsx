@@ -1,4 +1,5 @@
 import React from 'react';
+import getTemplate from './Awesome.component.template.jsx';
 
 class AwesomeComponent extends React.Component {
 
@@ -17,14 +18,7 @@ class AwesomeComponent extends React.Component {
 	}
 
 	render() {
-		return (
-			<div>
-				Likes: <span>{this.state.likesCount}</span> 
-				<div>
-					<button onClick={this.onLike}>Like Me!</button>
-				</div>
-			</div>
-		);
+		return getTemplate.call(this);
 	}
 }
 

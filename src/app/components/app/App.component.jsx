@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import getTemlpate from './App.component.template.jsx';
+import getTemplate from './App.component.template.jsx';
 
 class App extends Component {
 
@@ -8,7 +8,7 @@ class App extends Component {
 	}
 
 	render () {
-		return getTemlpate.call(this);
+		return getTemplate.call(this);
 	}
 
 	createMenuItems() {

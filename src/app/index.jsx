@@ -1,6 +1,6 @@
 import React from 'react';
 import { render } from 'react-dom';
-import App from './App.component.jsx';
+import App from './components/app/App.component.jsx';
 import { Router } from 'react-router-dom';
 import history from './history.jsx';
 import { Provider } from 'react-redux';

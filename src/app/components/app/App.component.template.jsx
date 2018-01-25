@@ -6,17 +6,15 @@ import { HashRouter , BrowserRouter, Route, Link, Switch } from 'react-router-do
 
 import MuiThemeProvider from 'material-ui/styles/MuiThemeProvider';
 import RaisedButton from 'material-ui/RaisedButton';
-
-import AwesomeComponent from './AwesomeComponent.jsx';
-import TodoListComponent from './TodoListComponent.jsx';
-
-import css from './../../assets/styles/main.scss';
-
 import { BarChart } from 'react-d3-components';
 
-import Footer from './components/Footer.jsx';
-import AddTodo from './containers/AddTodo.jsx';
-import VisibleTodoList from './containers/VisibleTodoList.jsx';
+import css from './../../../../assets/styles/main.scss';
+
+import AwesomeComponent from './../awesome/Awesome.component.jsx';
+import TodoListComponent from './../todo-list/TodoList.component.jsx';
+import Footer from './../../components/Footer.jsx';
+import AddTodo from './../../containers/AddTodo.jsx';
+import VisibleTodoList from './../../containers/VisibleTodoList.jsx';
 
 
 function getTemplate() {
