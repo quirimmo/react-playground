@@ -1,6 +1,6 @@
 import React from 'react';
 
-const NewLink = ({ active, children, onClick }) => {
+const TodoLink = ({ active, children, onClick }) => {
     if (active) {
         return <span>{children}</span>;
     }
@@ -18,4 +18,4 @@ const NewLink = ({ active, children, onClick }) => {
     );
 };
 
-export default NewLink;
+export default TodoLink;

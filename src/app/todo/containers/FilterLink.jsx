@@ -1,6 +1,6 @@
 import { connect } from 'react-redux';
 import { setVisibilityFilter } from './../actions/index.jsx';
-import Link from './../../components/Link.jsx';
+import TodoLink from './../components/todo-link/TodoLink.component.jsx';
 
 const mapStateToProps = (state, ownProps) => {
   	return {
@@ -19,6 +19,6 @@ const mapDispatchToProps = (dispatch, ownProps) => {
 const FilterLink = connect(
 	mapStateToProps,
   	mapDispatchToProps
-)(Link);
+)(TodoLink);
 
 export default FilterLink;
