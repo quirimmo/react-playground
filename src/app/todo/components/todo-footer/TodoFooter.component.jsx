@@ -1,5 +1,5 @@
 import React from 'react';
-import FilterLink from './../../containers/FilterLink.jsx';
+import FilterLink from './../../containers/filter-link/FilterLink.container.jsx';
 
 class TodoFooter extends React.Component {
     render() {
