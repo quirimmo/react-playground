@@ -9,7 +9,6 @@ import LikesDecrementer from './LikesDecrementer.component.jsx';
 class LikesCounter extends React.Component {
     constructor(props) {
         super(props);
-        console.log(this.props);
     }
 
     render() {
@@ -17,8 +16,8 @@ class LikesCounter extends React.Component {
             <div>
                 <LikesNumber likes={this.props.likes} />
                 <div>
-                    <LikesIncrementer />
-                    <LikesDecrementer onClick={this.props.onClick} />
+                    <LikesIncrementer onClick={this.props.onLike} />
+                    <LikesDecrementer onClick={this.props.onDislike} />
                 </div>
             </div>
         );

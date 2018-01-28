@@ -1,22 +1,23 @@
 import { connect } from 'react-redux';
 
-import { like } from './../../actions/likes-counter.action.jsx';
+import { like, dislike } from './../../actions/likes-counter.action.jsx';
 
 import LikesCounter from './../presentationals/LikesCounter.component.jsx';
 
 const mapStateToProps = (state, ownProps) => {
   	return {
 		likes: state.likesCounter
-		// onClick: () => { alert('FFS'); }
   	};
 };
 
 const mapDispatchToProps = (dispatch, ownProps) => {
 	return {
-    	onClick: () => {
-			console.log('on click!');
+    	onLike: () => {
 			dispatch(like());
-    	}
+		},
+		onDislike: () => {
+			dispatch(dislike());
+		}
   	};
 };
 

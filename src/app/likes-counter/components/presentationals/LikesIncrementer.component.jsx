@@ -7,7 +7,7 @@ class LikesIncrementer extends React.Component {
 
     render() {
         return (
-            <button onClick={alert.bind(window, 'liked!')}>
+            <button onClick={this.props.onClick}>
                 LIKE!
             </button>
         );
