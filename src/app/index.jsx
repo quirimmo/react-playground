@@ -6,9 +6,9 @@ import history from './history.jsx';
 import { Provider } from 'react-redux';
 import { createStore } from 'redux';
 
-import todoApp from './todo/reducers/index.jsx';
+import reducers from './reducers.jsx';
 
-let store = createStore(todoApp);
+let store = createStore(reducers, window.__REDUX_DEVTOOLS_EXTENSION__ && window.__REDUX_DEVTOOLS_EXTENSION__());
 
 render(
     <Provider store={store}>

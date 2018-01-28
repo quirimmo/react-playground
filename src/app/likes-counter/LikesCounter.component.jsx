@@ -8,6 +8,7 @@ class LikesCounter extends React.Component {
 			likesCount: 0
 		};
 		this.onLike = this.onLike.bind(this);
+		this.onDislike = this.onDislike.bind(this);
 	}
 
 	onLike() {
@@ -16,12 +17,21 @@ class LikesCounter extends React.Component {
 		});
 	}
 
+	onDislike() {
+		if (this.state.likesCount) {
+			this.setState({
+				likesCount: this.state.likesCount - 1
+			});
+		}
+	}
+
 	render() {
 		return (
 			<div>
 				Likes: <span>{this.state.likesCount}</span> 
 				<div>
 					<button onClick={this.onLike}>Like Me!</button>
+					<button onClick={this.onDislike}>Dislike Me!</button>
 				</div>
 			</div>
 		);
