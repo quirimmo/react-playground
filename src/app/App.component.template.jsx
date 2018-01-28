@@ -11,7 +11,7 @@ import { BarChart } from 'react-d3-components';
 import css from './../../assets/styles/main.scss';
 
 // import LikesCounter from './likes-counter/LikesCounter.component.jsx';
-import LikesCounter from './likes-counter/components/LikesCounter.component.jsx';
+import LikesCounterContainer from './likes-counter/components/containers/LikesCounter.component.jsx';
 import Todo from './todo/components/Todo.component.jsx'
 
 
@@ -54,14 +54,14 @@ function getTemplate() {
                 <RaisedButton label="Default" />
                 <p>Hello React Project</p>
                 <br/>
-                <LikesCounter />
+                <LikesCounterContainer />
                 <br/>
                 <div>{this.createMenuItems()}</div>
                 <HashRouter>
                     <div>
                         <Link to='/likes-counter'>Likes Counter</Link>
                         <Switch>
-                            <Route path='/likes-counter' component={LikesCounter} />
+                            <Route path='/likes-counter' component={LikesCounterContainer} />
                         </Switch>
                     </div>
                 </HashRouter>

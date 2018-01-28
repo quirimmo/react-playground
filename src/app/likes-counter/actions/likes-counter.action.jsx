@@ -4,7 +4,7 @@ export const like = () => {
     };
 };
 
-export const dilike = () => {
+export const dislike = () => {
     return {
         type: 'DISLIKE'
     };

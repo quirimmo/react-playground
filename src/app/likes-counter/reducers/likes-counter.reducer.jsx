@@ -1,9 +1,11 @@
-const likesCounter = (state = [], action) => {
+const likesCounter = (state = 0, action) => {
 	switch (action.type) {
-    	case 'LIKE':
-            return state.likes++;
+		case 'LIKE':
+			console.log('upgrading likes');
+			console.log(state);
+            return state++;
         case 'DISLIKE':
-            return state.likes--;
+            return state--;
     	default:
       		return state;
   	}

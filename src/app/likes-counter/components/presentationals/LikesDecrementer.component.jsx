@@ -2,12 +2,12 @@ import React from 'react';
 
 class LikesDecrementer extends React.Component {
     constructor(props) {
-		super(props);
+        super(props);
     }
 
     render() {
         return (
-            <button onClick={alert.bind(window, 'disliked!')}>
+            <button onClick={this.props.onClick}>
                 DISLIKE!
             </button>
         );

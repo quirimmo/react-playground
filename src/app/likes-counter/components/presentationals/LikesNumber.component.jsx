@@ -8,7 +8,7 @@ class LikesNumber extends React.Component {
     render() {
         return (
             <p>
-                Total number of likes: {0}
+                Total number of likes: {this.props.likes}
             </p>
         );
     }
