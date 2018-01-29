@@ -10,7 +10,6 @@ import { BarChart } from 'react-d3-components';
 
 import css from './../../assets/styles/main.scss';
 
-// import LikesCounter from './likes-counter/LikesCounter.component.jsx';
 import LikesCounterContainer from './likes-counter/components/containers/LikesCounter.component.jsx';
 import Todo from './todo/components/Todo.component.jsx'
 
