@@ -8,26 +8,31 @@ import MuiThemeProvider from 'material-ui/styles/MuiThemeProvider';
 import RaisedButton from 'material-ui/RaisedButton';
 import { BarChart } from 'react-d3-components';
 
+import MainMenu from './main-menu/components/presentationals/MainMenu.component.jsx';
+
 import css from './../../assets/styles/main.scss';
 
 function getTemplate() {
     return (
         <MuiThemeProvider>
             <div>
-                <HashRouter>
-                    <div>
-                        {this.createMenuItemsLinks()}
-                        <Switch>
-                            {this.createMenuItemsRoutes()}
-                        </Switch>
-                    </div>
-                </HashRouter>
+                <MainMenu />
             </div>
         </MuiThemeProvider>
     );
 }
 
 export default getTemplate;
+
+
+// <HashRouter>
+//     <div>
+//         {this.createMenuItemsLinks()}
+//         <Switch>
+//             {this.createMenuItemsRoutes()}
+//         </Switch>
+//     </div>
+// </HashRouter>
 
 
 // var tooltip = function(x, y0, y, total) {
