@@ -1,5 +1,5 @@
 import React from 'react';
-import TodoItem from './../todo-item/TodoItem.component.jsx';
+import TodoItem from './TodoItem.component.jsx';
 
 const TodoList = ({ todos, onTodoClick }) => (
     <ul>

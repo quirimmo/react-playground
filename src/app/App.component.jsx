@@ -1,32 +1,54 @@
 import React, { Component } from 'react';
-import getTemlpate from './App.component.template.jsx';
+import { HashRouter , BrowserRouter, Route, Link, Switch } from 'react-router-dom';
+
+import LikesCounterContainer from './likes-counter/components/containers/LikesCounter.component.jsx';
+import Todo from './todo/components/presentationals/Todo.component.jsx';
+
+import getTemplate from './App.component.template.jsx';
 
 class App extends Component {
 
 	constructor(props) {
 		super(props);
+		this.state = {
+			menuItems: [{
+				id: 1,
+				label: 'Likes Counter',
+				path: '/likes-counter',
+				component: LikesCounterContainer
+			}, {
+				id: 2,
+				label: 'Todo',
+				path: '/todo',
+				component: Todo
+			}]
+		};
 	}
 
-	render () {
-		return getTemlpate.call(this);
-	}
-
-	createMenuItems() {
-		this.menuItems = [{
-			id: 1,
-			label: 'Test 1',
-			path: '/my-path'
-		}, {
-			id: 2,
-			label: 'Test 2',
-			path: '/my-path-2'
-		}];
-		return this.menuItems.map(itemsMapper);
+	createMenuItemsLinks() {
+		return this.state.menuItems.map(itemsMapper);
 
 		function itemsMapper(item) {
-			return (<div key={item.id}>AAAA</div>);
+			return (
+				<Link key={item.id} to={item.path}>{item.label}</Link>
+			);
 		}
-    }
+	}
+
+	createMenuItemsRoutes() {
+		return this.state.menuItems.map(itemsMapper);
+
+		function itemsMapper(item) {
+			return (
+				<Route key={item.id} path={item.path} component={item.component} />
+			);
+		}
+	}
+
+
+	render () {
+		return getTemplate.call(this);
+	}
 
 }
 

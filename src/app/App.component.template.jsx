@@ -10,8 +10,6 @@ import { BarChart } from 'react-d3-components';
 
 import css from './../../assets/styles/main.scss';
 
-import LikesCounterContainer from './likes-counter/components/containers/LikesCounter.component.jsx';
-import Todo from './todo/components/Todo.component.jsx'
 
 
 function getTemplate() {
@@ -34,33 +32,11 @@ function getTemplate() {
     return (
         <MuiThemeProvider>
             <div>
-                <div>
-                    <Todo />
-                </div>
-                <br/>
-                <BarChart
-                    data={data}
-                    width={800}
-					height={400}
-					barPadding={0.8}
-                    margin={{top: 10, bottom: 50, left: 50, right: 10}}
-                    tooltipHtml={tooltip}
-					colorByLabel={false}
-					xAxis={{innerTickSize: 5, label: "x-label"}}
-                    yAxis={{label: "y-label"}}
-                />,
-                <br/>
-                <RaisedButton label="Default" />
-                <p>Hello React Project</p>
-                <br/>
-                <LikesCounterContainer />
-                <br/>
-                <div>{this.createMenuItems()}</div>
                 <HashRouter>
                     <div>
-                        <Link to='/likes-counter'>Likes Counter</Link>
+                        {this.createMenuItemsLinks()}
                         <Switch>
-                            <Route path='/likes-counter' component={LikesCounterContainer} />
+                            {this.createMenuItemsRoutes()}
                         </Switch>
                     </div>
                 </HashRouter>
@@ -70,3 +46,39 @@ function getTemplate() {
 }
 
 export default getTemplate;
+
+
+// <MuiThemeProvider>
+//             <div>
+//                 <div>
+//                     <Todo />
+//                 </div>
+//                 <br/>
+//                 <BarChart
+//                     data={data}
+//                     width={800}
+// 					height={400}
+// 					barPadding={0.8}
+//                     margin={{top: 10, bottom: 50, left: 50, right: 10}}
+//                     tooltipHtml={tooltip}
+// 					colorByLabel={false}
+// 					xAxis={{innerTickSize: 5, label: "x-label"}}
+//                     yAxis={{label: "y-label"}}
+//                 />,
+//                 <br/>
+//                 <RaisedButton label="Default" />
+//                 <p>Hello React Project</p>
+//                 <br/>
+//                 <LikesCounterContainer />
+//                 <br/>
+//                 <div>{this.createMenuItems()}</div>
+//                 <HashRouter>
+//                     <div>
+//                         <Link to='/likes-counter'>Likes Counter</Link>
+//                         <Switch>
+//                             <Route path='/likes-counter' component={LikesCounterContainer} />
+//                         </Switch>
+//                     </div>
+//                 </HashRouter>
+//             </div>
+//         </MuiThemeProvider>

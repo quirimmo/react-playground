@@ -1,6 +1,6 @@
 import { connect } from 'react-redux';
 import { setVisibilityFilter } from './../../actions/todo.action.jsx';
-import TodoLink from './../../components/todo-link/TodoLink.component.jsx';
+import TodoLink from './../presentationals/TodoLink.component.jsx';
 
 const mapStateToProps = (state, ownProps) => {
   	return {
