@@ -1,11 +1,14 @@
-export const like = () => {
+export const like = likeAction;
+export const dislike = dislikeAction;
+
+function likeAction() {
     return {
         type: 'LIKE'
     };
-};
+}
 
-export const dislike = () => {
+function dislikeAction() {
     return {
         type: 'DISLIKE'
     };
-};
+}
