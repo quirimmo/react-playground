@@ -7,7 +7,6 @@ import LikesNumber from './LikesNumber.component.jsx';
 import LikesIncrementer from './LikesIncrementer.component.jsx';
 import LikesDecrementer from './LikesDecrementer.component.jsx';
 
-
 class LikesCounter extends React.Component {
     constructor(props) {
         super(props);
