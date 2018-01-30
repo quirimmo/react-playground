@@ -1,16 +1,5 @@
 import React from 'react';
-
-import { CSSTransition, TransitionGroup } from 'react-transition-group';
-
-const Fade = ({ duration, children, ...props }) => (
-    <CSSTransition
-        {...props}
-        timeout={duration}
-        classNames="fade"
-    >
-        {children}
-    </CSSTransition>
-);
+import Fade from './../../../animations/Fade.component.jsx';
 
 class TodoItem extends React.Component {
 
