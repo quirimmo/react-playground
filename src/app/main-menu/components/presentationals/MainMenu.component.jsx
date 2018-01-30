@@ -1,11 +1,11 @@
+'use strict';
+
 import React from 'react';
-import { render } from 'react-dom';
-import { HashRouter , BrowserRouter, Route, Link, Switch } from 'react-router-dom';
 
 import LikesCounterContainer from './../../../likes-counter/components/containers/LikesCounter.component.jsx';
 import Todo from './../../../todo/components/presentationals/Todo.component.jsx';
 
-import styles from './../../styles/style.scss';
+import getTemplate from './MainMenu.component.template.jsx';
 
 class MainMenu extends React.Component {
 
@@ -23,44 +23,11 @@ class MainMenu extends React.Component {
 				path: '/todo',
 				component: Todo
 			}]
-		};
-	}
-
-	createMenuItemsLinks() {
-		return this.state.menuItems.map(itemsMapper);
-
-		function itemsMapper(item) {
-			return (
-				<Link key={item.id} to={item.path}>{item.label}</Link>
-			);
-		}
-	}
-
-	createMenuItemsRoutes() {
-		return this.state.menuItems.map(itemsMapper);
-
-		function itemsMapper(item) {
-			return (
-				<Route key={item.id} path={item.path} component={item.component} />
-			);
-		}
+        };
 	}
 
     render() {
-        return (
-            <HashRouter>
-                <div>
-                    <div id="main-menu">
-                        {this.createMenuItemsLinks()}
-                    </div>
-                    <Switch>
-                        <div>
-                            {this.createMenuItemsRoutes()}
-                        </div>
-                    </Switch>
-                </div>
-            </HashRouter>
-        );
+        return getTemplate.call(this);
     }
 }
 

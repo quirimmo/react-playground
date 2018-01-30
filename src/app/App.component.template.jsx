@@ -1,8 +1,6 @@
 'use strict';
 
 import React from 'react';
-import { render } from 'react-dom';
-import { HashRouter , BrowserRouter, Route, Link, Switch } from 'react-router-dom';
 
 import MuiThemeProvider from 'material-ui/styles/MuiThemeProvider';
 import RaisedButton from 'material-ui/RaisedButton';
@@ -23,16 +21,6 @@ function getTemplate() {
 }
 
 export default getTemplate;
-
-
-// <HashRouter>
-//     <div>
-//         {this.createMenuItemsLinks()}
-//         <Switch>
-//             {this.createMenuItemsRoutes()}
-//         </Switch>
-//     </div>
-// </HashRouter>
 
 
 // var tooltip = function(x, y0, y, total) {
@@ -73,14 +61,5 @@ export default getTemplate;
 //                 <br/>
 //                 <LikesCounterContainer />
 //                 <br/>
-//                 <div>{this.createMenuItems()}</div>
-//                 <HashRouter>
-//                     <div>
-//                         <Link to='/likes-counter'>Likes Counter</Link>
-//                         <Switch>
-//                             <Route path='/likes-counter' component={LikesCounterContainer} />
-//                         </Switch>
-//                     </div>
-//                 </HashRouter>
 //             </div>
 //         </MuiThemeProvider>

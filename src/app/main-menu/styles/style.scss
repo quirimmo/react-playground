@@ -30,3 +30,10 @@ $secondary-blue: #047ecc;
     box-shadow: none;
     border: none;
 }
+
+#main-menu a.active {
+    background-color: $secondary-blue;
+    border: none;
+    box-shadow: none;
+    color: #fff;
+}
