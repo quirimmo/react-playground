@@ -1,5 +1,5 @@
 import React from 'react';
-import Fade from './../../../animations/Fade.component.jsx';
+import Fade from './../../../animations/components/presentationals/Fade.component.jsx';
 
 class TodoItem extends React.Component {
 

@@ -1,33 +1,39 @@
 'use strict';
 
 import React from 'react';
+import { NavLink } from 'react-router-dom';
 
-import LikesCounterContainer from './../../../likes-counter/components/containers/LikesCounter.component.jsx';
-import Todo from './../../../todo/components/presentationals/Todo.component.jsx';
-
-import getTemplate from './MainMenu.component.template.jsx';
+import styles from './../../styles/style.scss';
 
 class MainMenu extends React.Component {
 
     constructor(props) {
 		super(props);
-		this.state = {
-			menuItems: [{
-				id: 1,
-				label: 'Likes Counter',
-				path: '/likes-counter',
-				component: LikesCounterContainer
-			}, {
-				id: 2,
-				label: 'Todo',
-				path: '/todo',
-				component: Todo
-			}]
-        };
+		this.createMenuItemsLinks.bind(this);
+	}
+
+	createMenuItemsLinks() {
+		return this.props.items.map(itemsMapper);
+
+		function itemsMapper(item) {
+			return (
+				<NavLink
+					key={item.id}
+					to={item.path}
+					activeClassName="active"
+				>
+					{item.label}
+				</NavLink>
+			);
+		}
 	}
 
     render() {
-        return getTemplate.call(this);
+		return (
+			<div id="main-menu">
+				{this.createMenuItemsLinks.call(this)}
+			</div>
+		);
     }
 }
 
