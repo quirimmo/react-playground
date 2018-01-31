@@ -1,5 +1,5 @@
 import React from 'react';
-import App from './App.jsx';
+import App from './App.component.jsx';
 
 describe('Comment item', () => {
     const wrapper = shallow(<App/>);
