@@ -1,4 +1,3 @@
-import React from 'react';
 import { like, dislike } from './likes-counter.action.jsx';
 
 describe('likes counter actions', () => {
