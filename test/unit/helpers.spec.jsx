@@ -13,6 +13,7 @@ global.sinon = sinon;
 global.spy = spy;
 chai.should();
 chai.use(sinonChai);
+chai.config.truncateThreshold = 0;
 
 global.mount = Enzyme.mount;
 global.render = Enzyme.render;
