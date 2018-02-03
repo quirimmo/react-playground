@@ -1,7 +1,7 @@
 import React from 'react';
 import configureStore from 'redux-mock-store';
-import LikesCounterContainer from './LikesCounter.component.jsx';
-import {mapDispatchToProps} from './LikesCounter.component.jsx';
+import LikesCounterContainer from './LikesCounter.container.jsx';
+import { mapDispatchToProps } from './LikesCounter.container.jsx';
 import { like, dislike } from './../../actions/likes-counter.action.jsx';
 
 describe('LikesCounter Container Component', () => {

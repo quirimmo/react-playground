@@ -6,7 +6,7 @@ import MuiThemeProvider from 'material-ui/styles/MuiThemeProvider';
 import RaisedButton from 'material-ui/RaisedButton';
 import { BarChart } from 'react-d3-components';
 
-import LikesCounterContainer from './likes-counter/components/containers/LikesCounter.component.jsx';
+import LikesCounterContainer from './likes-counter/components/containers/LikesCounter.container.jsx';
 import Todo from './todo/components/presentationals/Todo.component.jsx';
 import MainMenu from './main-menu/components/presentationals/MainMenu.component.jsx';
 import MainContent from './main-content/components/presentationals/MainContent.component.jsx';
