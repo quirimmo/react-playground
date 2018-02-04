@@ -84,66 +84,36 @@ describe('AddTodo Container Container Component', () => {
         });
     });
 
-    // describe('HTML', () => {
-    //     const divedWrapper = wrapper.dive();
-    //     const divedWrapperInstance = divedWrapper.instance();
+    describe('HTML', () => {
+        describe('form', () => {
+            beforeEach(() => {
+                divedWrapperInstance.input = { value: 'test' };
+            });
 
-    //     describe('form', () => {
+            it('should define the form element', () => {
+                divedWrapper.find('form').should.not.be.undefined;
+            });
+		});
 
-    //         beforeEach(() => {
-    //             divedWrapperInstance.input = { value: 'test' };
-    //         });
+		describe('input', () => {
+			beforeEach(() => {
+                divedWrapperInstance.input = { value: 'test' };
+			});
 
-    //         it('should define the form element', () => {
-    //             wrapper.find('form').should.not.be.undefined;
-    //         });
+            it('should define the input element', () => {
+                divedWrapper.find('input').should.not.be.undefined;
+			});
+		});
 
-    //         it('should call the onTodoSubmit method on submit', () => {
-    //             wrapper.find('form').simulate('submit');
-    //             // divedWrapperInstance.onTodoSubmit({ preventDefault: function() {} });
-    //             // const onTodoSubmitSpy = spy();
-    //             // divedWrapperInstance.onTodoSubmit = onTodoSubmitSpy;
-    //             // console.log(divedWrapperInstance);
+		describe('button', () => {
+			it('should define the button element', () => {
+                divedWrapper.find('button').should.not.be.undefined;
+			});
 
-    //             // divedWrapperInstance.onTodoSubmit({preventDefault: function() {}});
-    //             // divedWrapperInstance.onTodoSubmit = function() {
-    //             //     console.log('FFS');
-    //             // };
-    //             // divedWrapper.find('form').simulate('submit');
-    //             // console.log(divedWrapper.find('form'));
-    //             // divedWrapperInstance.onTodoSubmit();
-
-
-    //             // const form = wrapper.dive().find('form');
-    //             // form.props().onSubmit = spy();
-    //             // console.log(form.props().onSubmit);
-    //             // wrapper.dive().find('form').simulate('submit', {
-    //             //     preventDefault: () => {}
-    //             // });
-
-
-    //             // console.log(mount(wrapper.dive().find('form').html()));
-
-    //             // wrapper.dive().instance().onTodoSubmit = function() {
-    //             //     console.log('fuck off');
-    //             // };
-    //             // wrapper.dive().find('form').simulate('submit', {
-    //             //     preventDefault: () => {}
-    //             // });
-
-    //             // wrapper.instance().onTodoSubmit();
-    //             // wrapper.dive().instance().onTodoSubmit({ preventDefault: function() {} });
-    //             // console.log(wrapper.dive().instance().onTodoSubmit);
-
-    //             // wrapper.dive().instance().onTodoSubmit = function() {
-    //             //     console.log('blablabla');
-    //             // };
-    //             // wrapper.dive().find('form').simulate('submit', {
-    //             //     preventDefault: () => {}
-    //             // });
-    //             // onTodoSubmitSpy.should.have.been.called;
-    //         });
-    //     });
-    // });
+			it('should define the button element witht the right text', () => {
+				divedWrapper.find('button').text().should.be.eql('Add Todo');
+			});
+        });
+    });
 
 });
