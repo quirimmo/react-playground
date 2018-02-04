@@ -9,10 +9,9 @@ class LikesIncrementer extends React.Component {
 
     render() {
         return (
-            <RaisedButton label="LIKE!" secondary={true} in="true" onClick={this.props.onClick}/>
-            // <button onClick={this.props.onClick}>
-            //     LIKE!
-            // </button>
+            <button onClick={this.props.onClick}>
+                LIKE!
+            </button>
         );
     }
 }
