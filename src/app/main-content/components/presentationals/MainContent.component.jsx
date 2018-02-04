@@ -1,7 +1,7 @@
 'use strict';
 
 import React from 'react';
-import { Route, Switch } from 'react-router-dom';
+import { Route, Switch, Redirect } from 'react-router-dom';
 
 class MainMenu extends React.Component {
 
@@ -28,7 +28,8 @@ class MainMenu extends React.Component {
         return (
             <div id="main-content">
                 <Switch>
-                    {this.createMenuItemsRoutes.call(this)}
+					{this.createMenuItemsRoutes.call(this)}
+					<Redirect from="/" to="likes-counter" />
                 </Switch>
             </div>
         );
