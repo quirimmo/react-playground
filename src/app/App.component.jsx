@@ -8,7 +8,7 @@ import MainMenu from './main-menu/components/presentationals/MainMenu.component.
 import MainContent from './main-content/components/presentationals/MainContent.component.jsx';
 import LikesCounterContainer from './likes-counter/components/containers/LikesCounter.container.jsx';
 import Todo from './todo/components/presentationals/Todo.component.jsx';
-import PerformancesBarChartPage from './performances-bar-chart/components/containers/PerformancesBarChartPage.container.jsx';
+import PerformancesBarChartPageContainer from './performances-bar-chart/components/containers/PerformancesBarChartPage.container.jsx';
 
 import css from './../../assets/styles/main.scss';
 
@@ -32,7 +32,7 @@ class App extends Component {
 				id: 3,
 				label: 'Performances Bar Chart',
 				path: '/performances-bar-chart',
-				component: PerformancesBarChartPage
+				component: PerformancesBarChartPageContainer
 			}]
 		};
 	}

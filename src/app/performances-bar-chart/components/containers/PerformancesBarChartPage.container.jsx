@@ -1,31 +1,22 @@
-'use strict';
+import { connect } from 'react-redux';
 
-import React from 'react';
-import PerformancesBarChart from './../presentationals/PerformancesBarChart.component.jsx';
+import PerformancesBarChartPage from './../presentationals/PerformancesBarChartPage.component.jsx';
 
-class PerformancesBarChartPage extends React.Component {
-    constructor(props) {
-        super(props);
-        this.state = {
-            chartData: [{
-                label: 'somethingA',
-                values: [
-                    { x: 'A', y: 10 },
-                    { x: 'B', y: 4 },
-                    { x: 'C', y: 3 },
-                    { x: 'D', y: -3 }
-                ]
-            }]
-        };
-    }
+export const mapStateToProps = (state, ownProps) => {
+  	return {
+		chartData: state.chartData
+  	};
+};
 
-    render() {
-        return (
-            <div>
-                <PerformancesBarChart data={this.state.chartData} />
-            </div>
-        );
-    }
-}
+export const mapDispatchToProps = (dispatch, ownProps) => {
+	return {
+  	};
+};
 
+const PerformancesBarChartPageContainer = connect(
+	mapStateToProps,
+  	mapDispatchToProps
+)(PerformancesBarChartPage);
+
+// export default PerformancesBarChartPageContainer;
 export default PerformancesBarChartPage;
