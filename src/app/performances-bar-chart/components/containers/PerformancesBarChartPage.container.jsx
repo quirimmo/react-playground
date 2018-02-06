@@ -18,5 +18,4 @@ const PerformancesBarChartPageContainer = connect(
   	mapDispatchToProps
 )(PerformancesBarChartPage);
 
-// export default PerformancesBarChartPageContainer;
-export default PerformancesBarChartPage;
+export default PerformancesBarChartPageContainer;

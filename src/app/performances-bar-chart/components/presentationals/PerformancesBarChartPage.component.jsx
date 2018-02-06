@@ -22,19 +22,11 @@ class PerformancesBarChartPage extends React.Component {
                 ]
             }]
         };
-        this.onAddItem = this.onAddItem.bind(this);
-    }
-
-    onAddItem() {
-        this.setState({
-            chartData: this.state.chartData[0].values.concat({x: '11', y: 5})
-        });
     }
 
     render() {
         return (
             <div>
-                <button onClick={this.onAddItem}>Add item</button>
                 <br />
                 <PerformancesBarChart data={this.state.chartData} />
             </div>

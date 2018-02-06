@@ -21,11 +21,26 @@ class PerformancesBarChart extends React.Component {
             yLabel: this.props.yLabel || 'Y',
             tooltip: this.props.tooltip || this._getDefaultTooltip
         };
+        this.onAddItem = this.onAddItem.bind(this);
+    }
+
+    onAddItem() {
+        this.setState({
+            data: [{
+                values: this.state.data[0].values.concat({x: getNextItemValue.call(this), y: 5})
+            }]
+        });
+
+        function getNextItemValue() {
+            return '' + (parseInt(this.state.data[0].values[this.state.data[0].values.length - 1].x) + 1);
+        }
     }
 
     render() {
         return (
             <div className="wrapper-performances-bar-chart">
+                <button onClick={this.onAddItem}>Add item</button>
+                <br/>
                 <BarChart
                     data={this.state.data}
                     width={this.state.width}
