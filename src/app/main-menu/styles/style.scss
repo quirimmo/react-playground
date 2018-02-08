@@ -1,0 +1,39 @@
+$secondary-blue: #047ecc;
+
+#main-menu {
+    text-align: center;
+}
+
+#main-menu a{
+    text-decoration: none;
+    margin-right: 25px;
+    text-transform: uppercase;
+    background-color: #fff;
+    padding: 10px;
+    box-shadow: 2px 2px 2px #888;
+    display: inline-block;
+    color: $secondary-blue;
+    border: 1px solid $secondary-blue;
+}
+
+#main-menu a:last-child{
+    margin-right: 0px;
+}
+
+#main-menu a:hover{
+    color: #fff;
+    border: 1px solid #fff;
+    background-color: $secondary-blue;
+}
+
+#main-menu a:active{
+    box-shadow: none;
+    border: none;
+}
+
+#main-menu a.active {
+    background-color: $secondary-blue;
+    border: none;
+    box-shadow: none;
+    color: #fff;
+}

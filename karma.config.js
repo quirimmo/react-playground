@@ -4,7 +4,7 @@ var webpackConfig = require('./webpack.config');
 module.exports = function (config) {
     config.set({
         browsers: ['Chrome'], //run in Chrome
-        singleRun: false, 
+        singleRun: false,
         frameworks: ['chai', 'mocha'],
         plugins: [
             'karma-chrome-launcher',
