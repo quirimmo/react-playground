@@ -5,6 +5,8 @@ import { BarChart } from 'react-d3-components';
 
 import styles from './../../styles/style.scss';
 
+import PerformancesModel from './../../model/Performances.model.jsx';
+
 class PerformancesBarChart extends React.Component {
 
     constructor(props) {
@@ -22,6 +24,9 @@ class PerformancesBarChart extends React.Component {
             tooltip: this.props.tooltip || this._getDefaultTooltip
         };
         this.onAddItem = this.onAddItem.bind(this);
+
+        // PerformancesModel sample
+        let performancesModel = new PerformancesModel();
     }
 
     onAddItem() {
