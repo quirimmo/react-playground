@@ -17,6 +17,7 @@ class App extends Component {
 
 	constructor(props) {
 		super(props);
+		// this doesn't mutate during the application life: must not be a state property but simple data passed through props
 		this.state = {
 			menuItems: [{
 				id: 1,

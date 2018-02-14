@@ -30,6 +30,8 @@ class PerformancesBarChart extends React.Component {
     }
 
     onAddItem() {
+        // here in these two functions we should use function for updating the state because the update is based on the previous state
+        // try to see if you can lift up this data to the parent container
         this.setState({
             data: [{
                 values: this.state.data[0].values.concat({x: getNextItemValue.call(this), y: 5})
