@@ -6,6 +6,7 @@ import PerformancesBarChart from './PerformancesBarChart.component.jsx';
 class PerformancesBarChartPage extends React.Component {
     constructor(props) {
         super(props);
+        // lifting state brought data here, correct but we need to pass the callbacks too
         this.state = {
             chartData: [{
                 values: [
