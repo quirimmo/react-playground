@@ -2,47 +2,43 @@
 
 import React from 'react';
 import PerformancesBarChart from './PerformancesBarChart.component.jsx';
+import PerformancesModel from './../../model/Performances.model.jsx';
 
 class PerformancesBarChartPage extends React.Component {
     constructor(props) {
         super(props);
+
+        let performancesModel = new PerformancesModel();
+        const scenariosValues = performancesModel.scenarios.map((scenario, index) => ({
+            name: scenario.name,
+            file: scenario.file,
+            x: +(index + 1) + '',
+            y: scenario.duration
+        }));
         this.state = {
             chartData: [{
-                values: [
-                    { x: '1', y: 10 },
-                    { x: '2', y: 4 },
-                    { x: '3', y: 3 },
-                    { x: '4', y: 3 },
-                    { x: '5', y: 3 },
-                    { x: '6', y: 3 },
-                    { x: '7', y: 3 },
-                    { x: '8', y: 3 },
-                    { x: '9', y: 3 },
-                    { x: '10', y: -3 }
-                ]
+                values: scenariosValues
             }]
         };
-        this.onAddItem = this.onAddItem.bind(this);
-    }
 
-    onAddItem() {
-        this.setState((prevState, props) => ({
-            chartData: [{
-                values: prevState.chartData[0].values.concat({x: getNextItemValue.call(this, prevState), y: 5})
-            }]
-        }));
-
-        function getNextItemValue(prevState) {
-            console.log(prevState);
-            return '' + (parseInt(prevState.chartData[0].values[prevState.chartData[0].values.length - 1].x) + 1);
-        }
+        this._getDefaultTooltip = this._getDefaultTooltip.bind(this);
     }
 
     render() {
         return (
             <div>
-                <br />
-                <PerformancesBarChart onAddItem={this.onAddItem} data={this.state.chartData} />
+                <PerformancesBarChart tooltip={this._getDefaultTooltip} data={this.state.chartData} />
+            </div>
+        );
+    }
+
+    _getDefaultTooltip(x, y0, y, total) {
+        const currentScenario = this.state.chartData[0].values.find((scenario) => scenario.x == x);
+        return (
+            <div className="wrapper-scenario-chart-tooltip">
+                <h3>{currentScenario.name}</h3>
+                <h4 class="single-scenario-file">{currentScenario.file}</h4>
+                <h5 class="single-scenario-duration">{currentScenario.y.toString()}s</h5>
             </div>
         );
     }

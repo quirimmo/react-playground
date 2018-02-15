@@ -5,8 +5,6 @@ import { BarChart } from 'react-d3-components';
 
 import styles from './../../styles/style.scss';
 
-import PerformancesModel from './../../model/Performances.model.jsx';
-
 class PerformancesBarChart extends React.Component {
 
     constructor(props) {
@@ -14,9 +12,6 @@ class PerformancesBarChart extends React.Component {
         if(!props.data) {
             throw new Error('The data props of the PerformancesBarChart is missing');
         }
-
-        // PerformancesModel sample
-        let performancesModel = new PerformancesModel();
     }
 
     render() {
@@ -32,8 +27,6 @@ class PerformancesBarChart extends React.Component {
 
         return (
             <div className="wrapper-performances-bar-chart">
-                <button onClick={this.props.onAddItem}>Add item</button>
-                <br/>
                 <BarChart
                     data={input.data}
                     width={input.width}
