@@ -6,7 +6,6 @@ import PerformancesBarChart from './PerformancesBarChart.component.jsx';
 class PerformancesBarChartPage extends React.Component {
     constructor(props) {
         super(props);
-        // lifting state brought data here, correct but we need to pass the callbacks too
         this.state = {
             chartData: [{
                 values: [
@@ -23,13 +22,27 @@ class PerformancesBarChartPage extends React.Component {
                 ]
             }]
         };
+        this.onAddItem = this.onAddItem.bind(this);
+    }
+
+    onAddItem() {
+        this.setState((prevState, props) => ({
+            chartData: [{
+                values: prevState.chartData[0].values.concat({x: getNextItemValue.call(this, prevState), y: 5})
+            }]
+        }));
+
+        function getNextItemValue(prevState) {
+            console.log(prevState);
+            return '' + (parseInt(prevState.chartData[0].values[prevState.chartData[0].values.length - 1].x) + 1);
+        }
     }
 
     render() {
         return (
             <div>
                 <br />
-                <PerformancesBarChart data={this.state.chartData} />
+                <PerformancesBarChart onAddItem={this.onAddItem} data={this.state.chartData} />
             </div>
         );
     }

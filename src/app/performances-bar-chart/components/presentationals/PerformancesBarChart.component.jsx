@@ -14,7 +14,13 @@ class PerformancesBarChart extends React.Component {
         if(!props.data) {
             throw new Error('The data props of the PerformancesBarChart is missing');
         }
-        this.state = {
+
+        // PerformancesModel sample
+        let performancesModel = new PerformancesModel();
+    }
+
+    render() {
+        const input = {
             data: this.props.data,
             width: this.props.width || 1000,
             height: this.props.height || 600,
@@ -23,39 +29,19 @@ class PerformancesBarChart extends React.Component {
             yLabel: this.props.yLabel || 'Y',
             tooltip: this.props.tooltip || this._getDefaultTooltip
         };
-        this.onAddItem = this.onAddItem.bind(this);
 
-        // PerformancesModel sample
-        let performancesModel = new PerformancesModel();
-    }
-
-    onAddItem() {
-        // here in these two functions we should use function for updating the state because the update is based on the previous state
-        // try to see if you can lift up this data to the parent container
-        this.setState({
-            data: [{
-                values: this.state.data[0].values.concat({x: getNextItemValue.call(this), y: 5})
-            }]
-        });
-
-        function getNextItemValue() {
-            return '' + (parseInt(this.state.data[0].values[this.state.data[0].values.length - 1].x) + 1);
-        }
-    }
-
-    render() {
         return (
             <div className="wrapper-performances-bar-chart">
-                <button onClick={this.onAddItem}>Add item</button>
+                <button onClick={this.props.onAddItem}>Add item</button>
                 <br/>
                 <BarChart
-                    data={this.state.data}
-                    width={this.state.width}
-                    height={this.state.height}
-					barPadding={this.state.barPadding}
-                    xAxis={{innerTickSize: 5, label: this.state.xLabel}}
-                    yAxis={{innerTickSize: 5, label: this.state.yLabel}}
-                    tooltipHtml={this.state.tooltip}
+                    data={input.data}
+                    width={input.width}
+                    height={input.height}
+					barPadding={input.barPadding}
+                    xAxis={{innerTickSize: 5, label: input.xLabel}}
+                    yAxis={{innerTickSize: 5, label: input.yLabel}}
+                    tooltipHtml={input.tooltip}
                     colorByLabel={false}
                     margin={{top: 10, bottom: 50, left: 50, right: 10}}
                 />
