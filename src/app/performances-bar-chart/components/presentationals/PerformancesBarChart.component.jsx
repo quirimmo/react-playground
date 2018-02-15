@@ -43,7 +43,11 @@ class PerformancesBarChart extends React.Component {
     }
 
     _getDefaultTooltip(x, y0, y, total) {
-        return <div><h1>{y.toString()}</h1></div>;
+        return (
+            <div>
+                <h1>{y.toString()}</h1>
+            </div>
+        );
     }
 }
 
