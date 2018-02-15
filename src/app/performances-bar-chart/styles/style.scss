@@ -2,3 +2,19 @@
     text-align: center;
     margin-top: 50px;
 }
+
+.wrapper-scenario-chart-tooltip {
+    background: white;
+    box-shadow: 2px 2px 2px #888;
+    border-radius: 5px;
+    padding: 20px;
+    text-align: left;
+}
+
+.single-scenario-duration {
+    color: red;
+}
+
+.single-scenario-file {
+    color: green;
+}

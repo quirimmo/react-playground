@@ -22,6 +22,10 @@ const config = {
 		path: BUILD_DIR,
 		filename: 'bundle.js'
 	},
+	node: {
+		dns: 'mock',
+		net: 'mock'
+	},
 	module: {
 		rules: [
 			{
