@@ -1,6 +1,5 @@
 import React from 'react';
 import configureStore from 'redux-mock-store';
-
 import VisibleTodoListContainer from './VisibleTodoList.container.jsx';
 import { mapDispatchToProps } from './VisibleTodoList.container.jsx';
 
@@ -9,15 +8,18 @@ describe('VisibleTodoList Container Component', () => {
     const todosList = [
         {
             id: 1,
-            completed: false
+            completed: false,
+            text: 'text 1'
         },
         {
             id: 2,
-            completed: false
+            completed: false,
+            text: 'text 1'
         },
         {
             id: 3,
-            completed: true
+            completed: true,
+            text: 'text 1'
         }
     ];
 
@@ -25,7 +27,7 @@ describe('VisibleTodoList Container Component', () => {
         const store = mockStore({
             todos: todosList
         });
-        const wrapper = shallow(<VisibleTodoListContainer store={store}/>);
+        const wrapper = shallow(<VisibleTodoListContainer todos={todosList} store={store}/>);
 
         it('should be defined', () => {
             wrapper.should.not.be.undefined;
@@ -44,7 +46,7 @@ describe('VisibleTodoList Container Component', () => {
         const store = mockStore({
             todos: todosList
         });
-        const wrapper = shallow(<VisibleTodoListContainer store={store}/>);
+        const wrapper = shallow(<VisibleTodoListContainer todos={todosList} store={store}/>);
 
         it('should return all the todos', () => {
             wrapper.props().todos.should.have.length(3);
@@ -56,7 +58,7 @@ describe('VisibleTodoList Container Component', () => {
             todos: todosList,
             visibilityFilter: 'SHOW_COMPLETED'
         });
-        const wrapper = shallow(<VisibleTodoListContainer store={store}/>);
+        const wrapper = shallow(<VisibleTodoListContainer todos={todosList} store={store}/>);
 
         it('should return the completed todos', () => {
             wrapper.props().todos.should.have.length(1);
@@ -68,7 +70,7 @@ describe('VisibleTodoList Container Component', () => {
             todos: todosList,
             visibilityFilter: 'SHOW_ACTIVE'
         });
-        const wrapper = shallow(<VisibleTodoListContainer store={store}/>);
+        const wrapper = shallow(<VisibleTodoListContainer todos={todosList} store={store}/>);
 
         it('should return the not completed todos', () => {
             wrapper.props().todos.should.have.length(2);

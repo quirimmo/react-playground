@@ -9,7 +9,8 @@ describe('AddTodo Container Container Component', () => {
     let store = mockStore({});
     const dispatchSpy = spy();
     store.dispatch = dispatchSpy;
-    const wrapper = shallow(<AddTodoContainer store={store}/>);
+    const dispatchFn = () => {};
+    const wrapper = shallow(<AddTodoContainer dispatch={dispatchFn} store={store}/>);
     const wrapperInstance = wrapper.instance();
     const divedWrapper = wrapper.dive();
     const divedWrapperInstance = wrapper.dive().instance();

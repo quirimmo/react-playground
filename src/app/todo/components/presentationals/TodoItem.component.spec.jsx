@@ -1,6 +1,4 @@
 import React from 'react';
-
-import Fade from './../../../animations/components/presentationals/Fade.component.jsx';
 import TodoItem from './TodoItem.component.jsx';
 
 describe('TodoItem Component', () => {
@@ -13,24 +11,6 @@ describe('TodoItem Component', () => {
 
     it('should define the main component', () => {
         wrapper.should.not.be.undefined;
-    });
-
-    it('should define the Fade component', () => {
-        wrapper.find('Fade').should.not.be.undefined;
-    });
-
-
-    describe('state', () => {
-        describe('show', () => {
-            it('should be true by default', () => {
-                wrapper.instance().state.show.should.be.true;
-            });
-
-            it('should be false when unmounting', () => {
-                wrapper.instance().componentWillUnmount();
-                wrapper.instance().state.show.should.be.false;
-            });
-        });
     });
 
     describe('li', () => {

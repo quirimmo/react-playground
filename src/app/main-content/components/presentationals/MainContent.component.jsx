@@ -2,8 +2,9 @@
 
 import React from 'react';
 import { Route, Switch, Redirect } from 'react-router-dom';
+import PropTypes from 'prop-types';
 
-class MainMenu extends React.Component {
+class MainContent extends React.Component {
 
     constructor(props) {
 		super(props);
@@ -36,4 +37,14 @@ class MainMenu extends React.Component {
     }
 }
 
-export default MainMenu;
+MainContent.propTypes = {
+    items: PropTypes.arrayOf(
+		PropTypes.shape({
+			id: PropTypes.number.isRequired,
+			path: PropTypes.string.isRequired,
+			component: PropTypes.func.isRequired
+		}).isRequired
+	).isRequired
+};
+
+export default MainContent;

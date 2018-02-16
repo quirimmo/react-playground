@@ -1,6 +1,7 @@
 'use strict';
 
 import React from 'react';
+import PropTypes from 'prop-types';
 import PerformancesBarChart from './PerformancesBarChart.component.jsx';
 import PerformancesModel from './../../model/Performances.model.jsx';
 
@@ -66,5 +67,8 @@ class PerformancesBarChartPage extends React.Component {
         );
     }
 }
+
+PerformancesBarChart.propTypes = {
+};
 
 export default PerformancesBarChartPage;

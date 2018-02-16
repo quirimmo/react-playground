@@ -1,4 +1,5 @@
 import React from 'react';
+import PropTypes from 'prop-types';
 
 class TodoLink extends React.Component {
 
@@ -23,5 +24,11 @@ class TodoLink extends React.Component {
         );
     }
 }
+
+TodoLink.propTypes = {
+    onClick: PropTypes.func.isRequired,
+    active: PropTypes.bool.isRequired,
+    children: PropTypes.string.isRequired
+};
 
 export default TodoLink;

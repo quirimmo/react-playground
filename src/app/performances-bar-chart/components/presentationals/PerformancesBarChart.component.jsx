@@ -1,6 +1,7 @@
 'use strict';
 
 import React from 'react';
+import PropTypes from 'prop-types';
 import { BarChart } from 'react-d3-components';
 
 import styles from './../../styles/style.scss';
@@ -9,9 +10,6 @@ class PerformancesBarChart extends React.Component {
 
     constructor(props) {
         super(props);
-        if(!props.data) {
-            throw new Error('The data props of the PerformancesBarChart is missing');
-        }
     }
 
     render() {
@@ -50,5 +48,22 @@ class PerformancesBarChart extends React.Component {
         );
     }
 }
+
+PerformancesBarChart.propTypes = {
+    data: PropTypes.arrayOf(
+		PropTypes.shape({
+            values: PropTypes.arrayOf(PropTypes.shape({
+                x: PropTypes.string.isRequired,
+			    y: PropTypes.number.isRequired
+            })).isRequired
+		}).isRequired
+    ).isRequired,
+    tooltip: PropTypes.func,
+    width: PropTypes.number,
+    height: PropTypes.number,
+    barPadding: PropTypes.number,
+    xLabel: PropTypes.string,
+    yLabel: PropTypes.string
+};
 
 export default PerformancesBarChart;

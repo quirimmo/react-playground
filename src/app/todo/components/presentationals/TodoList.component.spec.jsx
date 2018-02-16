@@ -3,8 +3,22 @@ import TodoList from './TodoList.component.jsx';
 import TodoItem from './TodoItem.component.jsx';
 
 describe('TodoList', () => {
-    const todos = [{}, {}, {}];
-    const wrapper = shallow(<TodoList todos={todos} />);
+    const onTodoClickFn = () => {};
+    const todos = [{
+        completed: false,
+        id: 0,
+        text: 'A'
+    }, {
+        completed: false,
+        id: 1,
+        text: 'B'
+    }, {
+        completed: false,
+        id: 2,
+        text: 'C'
+    }];
+
+    const wrapper = shallow(<TodoList onTodoClick={onTodoClickFn} todos={todos} />);
 
     it('should define the main element', () => {
         wrapper.should.not.be.null;

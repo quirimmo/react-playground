@@ -1,4 +1,5 @@
 import { connect } from 'react-redux';
+import PropTypes from 'prop-types';
 import { toggleTodo } from './../../actions/todo.action.jsx';
 import TodoList from './../presentationals/TodoList.component.jsx';
 
@@ -32,5 +33,8 @@ const VisibleTodoList = connect(
 	mapStateToProps,
   	mapDispatchToProps
 )(TodoList);
+
+PropTypes.VisibleTodoList = {
+};
 
 export default VisibleTodoList;
