@@ -14,7 +14,7 @@ class Fade extends React.Component {
             <CSSTransition
                 {...this.props}
                 timeout={this.props.duration}
-                classNames="fade"
+                className="fade"
             >
                 {this.props.children}
             </CSSTransition>
