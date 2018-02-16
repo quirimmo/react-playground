@@ -2,8 +2,9 @@ import React from 'react';
 import TodoLink from './TodoLink.component.jsx';
 
 describe('TodoLink', () => {
+    const onClick = () => {};
     describe('active', () => {
-        const wrapper = shallow(<TodoLink active={true}>Hello World</TodoLink>);
+        const wrapper = shallow(<TodoLink onClick={onClick} active={true}>Hello World</TodoLink>);
 
         it('should define the span element only', () => {
             wrapper.find('span').should.not.be.null;
@@ -15,7 +16,7 @@ describe('TodoLink', () => {
     });
 
     describe('not active', () => {
-        const wrapper = shallow(<TodoLink active={false}>Hello World</TodoLink>);
+        const wrapper = shallow(<TodoLink onClick={onClick} active={false}>Hello World</TodoLink>);
 
         it('should define the a element', () => {
             wrapper.find('a').should.not.be.null;
