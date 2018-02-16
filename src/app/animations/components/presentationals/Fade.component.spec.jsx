@@ -2,7 +2,7 @@ import React from 'react';
 import Fade from './Fade.component.jsx';
 import { CSSTransition } from 'react-transition-group';
 
-describe.only('Fade', () => {
+describe('Fade', () => {
     const wrapper = shallow(<Fade duration={500}><div>CHILD</div></Fade>);
 
     it('should define the main component', () => {
