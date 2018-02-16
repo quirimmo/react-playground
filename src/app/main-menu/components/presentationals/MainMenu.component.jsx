@@ -2,6 +2,7 @@
 
 import React from 'react';
 import { NavLink } from 'react-router-dom';
+import PropTypes from 'prop-types';
 
 import styles from './../../styles/style.scss';
 
@@ -36,5 +37,15 @@ class MainMenu extends React.Component {
 		);
     }
 }
+
+
+MainMenu.propTypes = {
+    items: PropTypes.arrayOf(
+		PropTypes.shape({
+			id: PropTypes.number.isRequired,
+			path: PropTypes.string.isRequired
+		}).isRequired
+	).isRequired
+};
 
 export default MainMenu;

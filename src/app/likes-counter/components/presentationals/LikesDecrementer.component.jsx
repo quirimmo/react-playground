@@ -1,5 +1,5 @@
 import React from 'react';
-
+import PropTypes from 'prop-types';
 import RaisedButton from 'material-ui/RaisedButton';
 
 class LikesDecrementer extends React.Component {
@@ -8,16 +8,16 @@ class LikesDecrementer extends React.Component {
     }
 
     render() {
-        function test() {
-            alert('test');
-        }
         return (
-            // <RaisedButton label="DISLIKE!" />
             <button onClick={this.props.onClick}>
                 DISLIKE!
             </button>
         );
     }
 }
+
+LikesDecrementer.propTypes = {
+    onClick: PropTypes.func.isRequired
+};
 
 export default LikesDecrementer;

@@ -2,6 +2,7 @@
 
 import React from 'react';
 import { connect } from 'react-redux';
+import PropTypes from 'prop-types';
 
 import LikesNumber from './LikesNumber.component.jsx';
 import LikesIncrementer from './LikesIncrementer.component.jsx';
@@ -24,5 +25,11 @@ class LikesCounter extends React.Component {
         );
     }
 }
+
+LikesCounter.propTypes = {
+    likes: PropTypes.number.isRequired,
+    onLike: PropTypes.func.isRequired,
+    onDislike: PropTypes.func.isRequired
+};
 
 export default LikesCounter;

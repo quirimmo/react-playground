@@ -1,4 +1,5 @@
 import React from 'react';
+import PropTypes from 'prop-types';
 import { connect } from 'react-redux';
 import { addTodo } from './../../actions/todo.action.jsx';
 
@@ -35,6 +36,10 @@ class AddTodo extends React.Component{
 	}
 
 }
+
+AddTodo.propTypes = {
+    dispatch: PropTypes.func.isRequired
+};
 
 AddTodo = connect()(AddTodo);
 export default AddTodo;
