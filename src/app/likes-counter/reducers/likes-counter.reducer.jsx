@@ -5,8 +5,8 @@ const likesCounter = (state = 0, action) => {
 		case 'DISLIKE':
 			return state > 0 ? state - 1 : state;
 		default:
-      		return state;
-  	}
-}
+			return state;
+	}
+};
 
 export default likesCounter;

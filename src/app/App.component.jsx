@@ -1,5 +1,3 @@
-'use strict';
-
 import React, { Component } from 'react';
 import { HashRouter } from 'react-router-dom';
 import MuiThemeProvider from 'material-ui/styles/MuiThemeProvider';
@@ -10,7 +8,7 @@ import LikesCounterContainer from './likes-counter/components/containers/LikesCo
 import Todo from './todo/components/presentationals/Todo.component.jsx';
 import PerformancesBarChartPage from './performances-bar-chart/components/presentationals/PerformancesBarChartPage.component.jsx';
 
-import css from './../../assets/styles/main.scss';
+import './../../assets/styles/main.scss';
 
 
 class App extends Component {
@@ -19,7 +17,7 @@ class App extends Component {
 		super(props);
 	}
 
-	render () {
+	render() {
 		const menuItems = [{
 			id: 1,
 			label: 'Likes Counter',

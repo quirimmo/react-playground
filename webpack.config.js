@@ -30,10 +30,12 @@ const config = {
 		rules: [
 			{
 				test: /\.jsx$/,
+				exclude: /node_modules/,
 				use: 'babel-loader'
 			},
 			{
 				test: /\.css$/,
+				exclude: /node_modules/,
 				use: ExtractTextPlugin.extract({
 					use: 'css-loader',
 					fallback: 'style-loader'
@@ -41,6 +43,7 @@ const config = {
 			},
 			{
 				test: /\.scss$/,
+				exclude: /node_modules/,
 				use: [{
 					loader: 'style-loader'
 				}, {
@@ -48,6 +51,11 @@ const config = {
 				}, {
 					loader: 'sass-loader'
 				}]
+			},
+			{
+				test: /\.jsx$/,
+				exclude: /node_modules/,
+				use: ['eslint-loader']
 			}
 		]
 	},

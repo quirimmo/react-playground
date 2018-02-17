@@ -3,7 +3,7 @@ import PropTypes from 'prop-types';
 import { connect } from 'react-redux';
 import { addTodo } from './../../actions/todo.action.jsx';
 
-class AddTodo extends React.Component{
+class AddTodo extends React.Component {
 
 	constructor(props) {
 		super(props);
@@ -25,7 +25,7 @@ class AddTodo extends React.Component{
 					onSubmit={this.onTodoSubmit}
 				>
 					<input
-						ref={node => { this.input = node}}
+						ref={node => { this.input = node; }}
 					/>
 					<button type="submit">
 						Add Todo
@@ -38,7 +38,7 @@ class AddTodo extends React.Component{
 }
 
 AddTodo.propTypes = {
-    dispatch: PropTypes.func.isRequired
+	dispatch: PropTypes.func.isRequired
 };
 
 AddTodo = connect()(AddTodo);

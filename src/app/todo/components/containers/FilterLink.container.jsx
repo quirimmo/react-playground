@@ -3,23 +3,17 @@ import PropTypes from 'prop-types';
 import { setVisibilityFilter } from './../../actions/todo.action.jsx';
 import TodoLink from './../presentationals/TodoLink.component.jsx';
 
-const mapStateToProps = (state, ownProps) => {
-  	return {
-    	active: ownProps.filter === state.visibilityFilter
-  	};
-};
+const mapStateToProps = (state, ownProps) => ({
+	active: ownProps.filter === state.visibilityFilter
+});
 
-const mapDispatchToProps = (dispatch, ownProps) => {
-	return {
-    	onClick: () => {
-      		dispatch(setVisibilityFilter(ownProps.filter))
-    	}
-  	};
-};
+const mapDispatchToProps = (dispatch, ownProps) => ({
+	onClick: () => { dispatch(setVisibilityFilter(ownProps.filter)); }
+});
 
 const FilterLink = connect(
 	mapStateToProps,
-  	mapDispatchToProps
+	mapDispatchToProps
 )(TodoLink);
 
 PropTypes.FilterLink = {
