@@ -1,3 +1,2 @@
-Add prop types check everywhere
 Add lint
 Add e2e tests
