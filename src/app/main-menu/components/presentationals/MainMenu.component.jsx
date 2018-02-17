@@ -1,14 +1,12 @@
-'use strict';
-
 import React from 'react';
 import { NavLink } from 'react-router-dom';
 import PropTypes from 'prop-types';
 
-import styles from './../../styles/style.scss';
+import './../../styles/style.scss';
 
 class MainMenu extends React.Component {
 
-    constructor(props) {
+	constructor(props) {
 		super(props);
 		this.createMenuItemsLinks.bind(this);
 	}
@@ -29,18 +27,18 @@ class MainMenu extends React.Component {
 		}
 	}
 
-    render() {
+	render() {
 		return (
 			<div id="main-menu">
 				{this.createMenuItemsLinks.call(this)}
 			</div>
 		);
-    }
+	}
 }
 
 
 MainMenu.propTypes = {
-    items: PropTypes.arrayOf(
+	items: PropTypes.arrayOf(
 		PropTypes.shape({
 			id: PropTypes.number.isRequired,
 			path: PropTypes.string.isRequired
