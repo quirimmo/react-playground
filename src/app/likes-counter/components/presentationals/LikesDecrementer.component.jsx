@@ -7,11 +7,7 @@ class LikesDecrementer extends React.Component {
 	}
 
 	render() {
-		return (
-			<button onClick={this.props.onClick}>
-				DISLIKE!
-			</button>
-		);
+		return <button onClick={this.props.onClick}>DISLIKE!</button>;
 	}
 }
 

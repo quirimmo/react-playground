@@ -8,13 +8,12 @@ const mapStateToProps = (state, ownProps) => ({
 });
 
 const mapDispatchToProps = (dispatch, ownProps) => ({
-	onClick: () => { dispatch(setVisibilityFilter(ownProps.filter)); }
+	onClick: () => {
+		dispatch(setVisibilityFilter(ownProps.filter));
+	}
 });
 
-const FilterLink = connect(
-	mapStateToProps,
-	mapDispatchToProps
-)(TodoLink);
+const FilterLink = connect(mapStateToProps, mapDispatchToProps)(TodoLink);
 
 PropTypes.FilterLink = {
 	filter: PropTypes.string.isRequired

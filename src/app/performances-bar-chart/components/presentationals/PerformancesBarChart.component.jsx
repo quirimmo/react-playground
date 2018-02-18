@@ -5,7 +5,6 @@ import { BarChart } from 'react-d3-components';
 import './../../styles/style.scss';
 
 class PerformancesBarChart extends React.Component {
-
 	constructor(props) {
 		super(props);
 	}
@@ -61,10 +60,12 @@ class PerformancesBarChart extends React.Component {
 PerformancesBarChart.propTypes = {
 	data: PropTypes.arrayOf(
 		PropTypes.shape({
-			values: PropTypes.arrayOf(PropTypes.shape({
-				x: PropTypes.string.isRequired,
-				y: PropTypes.number.isRequired
-			})).isRequired
+			values: PropTypes.arrayOf(
+				PropTypes.shape({
+					x: PropTypes.string.isRequired,
+					y: PropTypes.number.isRequired
+				})
+			).isRequired
 		}).isRequired
 	).isRequired,
 	tooltip: PropTypes.func,

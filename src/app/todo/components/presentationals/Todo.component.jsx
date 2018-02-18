@@ -5,7 +5,6 @@ import AddTodo from './../containers/AddTodo.container.jsx';
 import VisibleTodoList from './../containers/VisibleTodoList.container.jsx';
 
 class Todo extends React.Component {
-
 	constructor(props) {
 		super(props);
 	}
@@ -19,7 +18,6 @@ class Todo extends React.Component {
 			</div>
 		);
 	}
-
 }
 
 export default Todo;

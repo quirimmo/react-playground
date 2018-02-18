@@ -7,11 +7,7 @@ class LikesNumber extends React.Component {
 	}
 
 	render() {
-		return (
-			<p>
-				Total number of likes: {this.props.likes}
-			</p>
-		);
+		return <p>Total number of likes: {this.props.likes}</p>;
 	}
 }
 
