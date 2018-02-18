@@ -1,2 +1,2 @@
-Add lint
 Add e2e tests
+Add prettier

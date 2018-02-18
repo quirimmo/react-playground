@@ -1,4 +1,7 @@
+/* global document */
+
 import React from 'react';
+import DocumentTitle from 'react-document-title';
 import PerformancesBarChart from './PerformancesBarChart.component.jsx';
 import PerformancesModel from './../../model/Performances.model.jsx';
 
@@ -58,6 +61,7 @@ class PerformancesBarChartPage extends React.Component {
 	render() {
 		return (
 			<div>
+				<DocumentTitle title='Performances Bar Chart'></DocumentTitle>
 				<PerformancesBarChart tooltip={this._getScenariosTooltip} data={this.chartData.scenariosChartData} />
 				<PerformancesBarChart tooltip={this._getStepsTooltip} data={this.chartData.stepsChartData} />
 			</div>
