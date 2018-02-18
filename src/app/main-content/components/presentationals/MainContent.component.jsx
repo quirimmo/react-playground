@@ -3,7 +3,6 @@ import { Route, Switch, Redirect } from 'react-router-dom';
 import PropTypes from 'prop-types';
 
 class MainContent extends React.Component {
-
 	constructor(props) {
 		super(props);
 		this.createMenuItemsRoutes.bind(this);

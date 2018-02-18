@@ -11,35 +11,37 @@ import PerformancesBarChartPage from './performances-bar-chart/components/presen
 
 import './../../assets/styles/main.scss';
 
-
 class App extends Component {
-
 	constructor(props) {
 		super(props);
 	}
 
 	render() {
-		const menuItems = [{
-			id: 1,
-			label: 'Likes Counter',
-			path: '/likes-counter',
-			component: LikesCounterContainer
-		}, {
-			id: 2,
-			label: 'Todo',
-			path: '/todo',
-			component: Todo
-		}, {
-			id: 3,
-			label: 'Performances Bar Chart',
-			path: '/performances-bar-chart',
-			component: PerformancesBarChartPage
-		}];
+		const menuItems = [
+			{
+				id: 1,
+				label: 'Likes Counter',
+				path: '/likes-counter',
+				component: LikesCounterContainer
+			},
+			{
+				id: 2,
+				label: 'Todo',
+				path: '/todo',
+				component: Todo
+			},
+			{
+				id: 3,
+				label: 'Performances Bar Chart',
+				path: '/performances-bar-chart',
+				component: PerformancesBarChartPage
+			}
+		];
 
 		return (
 			<MuiThemeProvider>
 				<div>
-					<DocumentTitle title='React Playground'></DocumentTitle>
+					<DocumentTitle title="React Playground" />
 					<HashRouter>
 						<div>
 							<div>
@@ -54,7 +56,6 @@ class App extends Component {
 			</MuiThemeProvider>
 		);
 	}
-
 }
 
 export default App;

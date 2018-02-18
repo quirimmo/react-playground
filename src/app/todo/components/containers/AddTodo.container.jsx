@@ -4,7 +4,6 @@ import { connect } from 'react-redux';
 import { addTodo } from './../../actions/todo.action.jsx';
 
 class AddTodo extends React.Component {
-
 	constructor(props) {
 		super(props);
 		this.input = null;
@@ -21,20 +20,17 @@ class AddTodo extends React.Component {
 	render() {
 		return (
 			<div>
-				<form
-					onSubmit={this.onTodoSubmit}
-				>
+				<form onSubmit={this.onTodoSubmit}>
 					<input
-						ref={node => { this.input = node; }}
+						ref={node => {
+							this.input = node;
+						}}
 					/>
-					<button type="submit">
-						Add Todo
-					</button>
+					<button type="submit">Add Todo</button>
 				</form>
 			</div>
 		);
 	}
-
 }
 
 AddTodo.propTypes = {

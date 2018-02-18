@@ -7,11 +7,7 @@ class LikesIncrementer extends React.Component {
 	}
 
 	render() {
-		return (
-			<button onClick={this.props.onClick}>
-				LIKE!
-			</button>
-		);
+		return <button onClick={this.props.onClick}>LIKE!</button>;
 	}
 }
 

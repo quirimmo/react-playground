@@ -15,9 +15,8 @@ export const mapDispatchToProps = dispatch => ({
 	}
 });
 
-const LikesCounterContainer = connect(
-	mapStateToProps,
-	mapDispatchToProps
-)(LikesCounter);
+const LikesCounterContainer = connect(mapStateToProps, mapDispatchToProps)(
+	LikesCounter
+);
 
 export default LikesCounterContainer;

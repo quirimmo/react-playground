@@ -5,7 +5,6 @@ import PropTypes from 'prop-types';
 import './../../styles/style.scss';
 
 class MainMenu extends React.Component {
-
 	constructor(props) {
 		super(props);
 		this.createMenuItemsLinks.bind(this);
@@ -16,11 +15,7 @@ class MainMenu extends React.Component {
 
 		function itemsMapper(item) {
 			return (
-				<NavLink
-					key={item.id}
-					to={item.path}
-					activeClassName="active"
-				>
+				<NavLink key={item.id} to={item.path} activeClassName="active">
 					{item.label}
 				</NavLink>
 			);
@@ -28,14 +23,9 @@ class MainMenu extends React.Component {
 	}
 
 	render() {
-		return (
-			<div id="main-menu">
-				{this.createMenuItemsLinks.call(this)}
-			</div>
-		);
+		return <div id="main-menu">{this.createMenuItemsLinks.call(this)}</div>;
 	}
 }
-
 
 MainMenu.propTypes = {
 	items: PropTypes.arrayOf(
