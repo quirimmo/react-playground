@@ -1,4 +1,5 @@
 import React, { Component } from 'react';
+import DocumentTitle from 'react-document-title';
 import { HashRouter } from 'react-router-dom';
 import MuiThemeProvider from 'material-ui/styles/MuiThemeProvider';
 
@@ -38,6 +39,7 @@ class App extends Component {
 		return (
 			<MuiThemeProvider>
 				<div>
+					<DocumentTitle title='React Playground'></DocumentTitle>
 					<HashRouter>
 						<div>
 							<div>
