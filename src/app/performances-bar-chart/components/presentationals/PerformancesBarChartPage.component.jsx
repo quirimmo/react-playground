@@ -1,3 +1,5 @@
+/* global document */
+
 import React from 'react';
 import PerformancesBarChart from './PerformancesBarChart.component.jsx';
 import PerformancesModel from './../../model/Performances.model.jsx';
@@ -31,6 +33,10 @@ class PerformancesBarChartPage extends React.Component {
 				values: stepsValues
 			}]
 		};
+	}
+
+	componentDidMount() {
+		document.title = 'Performances Bar Chart';
 	}
 
 	_getScenariosTooltip(x) {
